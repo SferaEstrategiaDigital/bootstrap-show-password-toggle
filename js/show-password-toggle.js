@@ -1,7 +1,12 @@
-document.querySelector("[type='password']").classList.add("input-password");
-document.getElementById("toggle-password").classList.remove("d-none");
 const passwordInput = document.querySelector("[type='password']");
 const togglePasswordButton = document.getElementById("toggle-password");
+
+if(passwordInput === null || togglePasswordButton === null)
+  return;
+
+passwordInput.classList.add("input-password");
+togglePasswordButton.getElementById("toggle-password").classList.remove("d-none");
+
 togglePasswordButton.addEventListener("click", togglePassword);
 function togglePassword() {
   if (passwordInput.type === "password") {
